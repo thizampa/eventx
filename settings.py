@@ -2,21 +2,6 @@
 import os
 PROJECT_DIR = os.path.dirname(__file__)
 
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
-MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
-
-TEMPLATES_LOADERS = (
-'django.template.loadres.filesystem.Loadr',
-'django.template.loadres.app_directories.Loadr',
-)
-
-TEMPLATES_DIRS = (
-# Always use forward slashes, even on Windows.
-# Don't forget to use absolute paths, not relative paths.
-os.path.join(PROJECT_DIR, 'templates'),
-)
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -63,17 +48,9 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+MEDIA_URL = '/media/'
+ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'a!v&m&a!uf$q-3ecyy8-xv-qj=y0e311k&a^&+a+_h#35%u78='
@@ -99,6 +76,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+	os.path.join(PROJECT_DIR, 'templates'),
 )
 
 INSTALLED_APPS = (
